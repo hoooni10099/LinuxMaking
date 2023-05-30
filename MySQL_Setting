@@ -1,0 +1,22 @@
+sudo apt-get insall mysql-server
+
+sudo ufw allow mysql # 외부에서 접그이 가능하도록 MySQL 포트(3306) 개방
+# MySQL의 설정파일에 들어가서 bind- addres = 127.0.0.1이 되어있는 부분을 주석처리 해주어야 정상적으로 외부 접속이 가능하다.
+
+sudo vi /etc/mysql/my.cnf # 설정파일 경로
+
+sudo systemctl enable mysql # 리눅스 서버가 재시작되면, 자동으로 MySQL도 실행되도록 처리
+
+sudo /usr/bin/mysql -u root -p # root 계정으로 mysql에 로그인, 초기 비밀번호는 리눅스 계정의 비밀번호와 동일
+
+create database (데이터베이스명); # Database 생성
+
+show databases;
+
+create user '사용자 계정'@'%' identified by '비밀번호' # '%'은 외부에서도 접근이 가능하도록 사용자 계정을 생성
+
+grant all privileges on (권한을 부여할 데이터베이스명).* to '사용자 계정'@'%'; # 새 계정에 생성해두었던 데이터 베이스에 권한 부여
+
+show databases;
+
+# 여기까지 리눅스에 MySQL 설치와 DB 및 계정 세팅
