@@ -1,7 +1,7 @@
 sudo apt-get insall mysql-server
 
-sudo ufw allow mysql # 외부에서 접그이 가능하도록 MySQL 포트(3306) 개방
-# MySQL의 설정파일에 들어가서 bind- addres = 127.0.0.1이 되어있는 부분을 주석처리 해주어야 정상적으로 외부 접속이 가능하다.
+sudo ufw allow mysql # 외부에서 접근이 가능하도록 MySQL 포트(3306) 개방
+# MySQL의 설정파일에 들어가서 bind- address = 127.0.0.1이 되어있는 부분을 주석처리 해주어야 정상적으로 외부 접속이 가능하다.
 
 sudo vi /etc/mysql/my.cnf # 설정파일 경로
 
