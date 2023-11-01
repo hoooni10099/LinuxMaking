@@ -1,5 +1,8 @@
 IP 주소 확인하는 방법
 
+ctrl + alt + t
+터미널 열기
+
 ifconfig -  내가 사용하고 있는 장비의 IP 정보 확인하는 방법
 만약 설치되어 있지 않다면 sudo apt install net-tools
 추가적으로 네트워크 인터페이스 이름을 알고 있다면 ifconfig <interface name> 로 정보 조회 가능
@@ -9,4 +12,11 @@ ip 주소 확인
 
 hostname -I
 현 host 기기가 사용하고 있는 ip 주소만
+
+와이파이를 통해 인터넷을 사용 중인 경우, IP 주소는 DHCP(Dynamec Host Configuration Protocol)를 통해 자동으로 할당됨
+ifconfig 하면 inet 중 하나가 현재 IP 주소일 것임.
+근데 이 주소는 DHCP에 의해 동적으로 할당되므로 고정IP 주소는 아니다.
+DHCP를 사용하는 경우, 네트워크 설정 파일은 보통 자동으로 구성됨. 따라서 IP 주소 할당 방법이 DHCP로 설정되어 있을 것이다.
+
+sudo apt update 명령어 사용해서 업데이트
 
